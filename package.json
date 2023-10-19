@@ -1,9 +1,9 @@
 {
   "name": "@skedulo/mex-engine-proxy",
-  "version": "1.0.0-pre18",
+  "version": "1.0.0-pre30",
   "description": "Mex Engine proxy",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "compile": "tsc",
     "install-packages" : "npm install --force",
