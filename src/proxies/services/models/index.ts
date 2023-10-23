@@ -65,6 +65,7 @@ export type PageLevelDataContext = {
     pageData: any,
     formData: any,
     sharedData: any,
+    originalPageData?: any,
     metadata: Metadatacontext
     item?: any
     sectionTitle?: any
