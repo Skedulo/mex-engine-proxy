@@ -14,6 +14,8 @@ export interface IAssetsManager {
     getResources(): any
     getInstanceData(): any
     getCustomFunction(): string | null
+    getAccessToken(): Promise<string>
+    getAPIUrl(): Promise<string>
 }
 
 export interface INavigationProcessManager {

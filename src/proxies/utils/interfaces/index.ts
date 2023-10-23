@@ -1,4 +1,5 @@
 import {TimezoneMetadata} from "../../services";
+import {TimeZoneType} from "../models";
 
 export interface ExtHelper {
     data: ExtHelperData
@@ -6,21 +7,23 @@ export interface ExtHelper {
     ui: ExtHelperUI
 }
 
-interface ExtHelperData {
+export interface ExtHelperData {
     getTimezonesData(): TimezoneMetadata|undefined
     changeData(fn: () => void):any /* Change data in data context */
     submit(options?: ExtHelperSubmitOptions): Promise<boolean> /* Submit/Save data from current page, and automatically close page */
     translate(key: string, args?: any[]): string /* translate key from localization keys */
 }
 
-type ExtHelperSubmitOptions = {
+export type ExtHelperSubmitOptions = {
     stopWhenInvalid?: Boolean
 }
 
-interface ExtHelperDate {
+export interface ExtHelperDate {
     getNowDateTime(): string /* get current date time */
+
+    getLocaleDateDisplay(value: string, type: "date" | "datetime" | "time", timezone: TimeZoneType): Promise<string|undefined>
 }
 
-interface ExtHelperUI {
+export interface ExtHelperUI {
     alert(message: string): void /* make an alert UI */
 }
