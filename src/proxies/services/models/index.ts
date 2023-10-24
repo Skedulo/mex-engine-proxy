@@ -72,3 +72,7 @@ export type PageLevelDataContext = {
     attachments?: AttachmentMetadata[]
 }
 
+export type AttachmentSetting = {
+    saveOriginalPhotos: boolean
+}
+
