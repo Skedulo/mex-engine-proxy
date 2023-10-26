@@ -7,6 +7,11 @@ export interface IAPIHooks {
         config: AxiosRequestConfig<TBody> | string,
         options?: Options
     ): APIResult<TResponse>
+
+    useAPI<TResponse = any, TBody = any>(
+        config: AxiosRequestConfig<TBody> | string,
+        options?: Options
+    ): APIResult<TResponse>
 }
 
 export interface INativeHooks {
