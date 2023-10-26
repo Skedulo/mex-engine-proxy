@@ -48,6 +48,7 @@ export interface IAttachmentsManager {
 export type InternalUtilsType =  {
     data: {
         getMandatoryExpressionValue: (def: boolean|DataExpressionType|undefined, dataContext: any) => boolean
+        generateUniqSerial(tempName?: string|undefined): string
     },
     navigation: {
         exit: () => {}
