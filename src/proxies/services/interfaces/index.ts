@@ -16,6 +16,7 @@ export interface IAssetsManager {
     getCustomFunction(): string | null
     getAccessToken(): Promise<string>
     getAPIUrl(): Promise<string>
+    sync(forceSync: boolean): Promise<boolean>
 }
 
 export interface INavigationProcessManager {
