@@ -70,6 +70,7 @@ export type PageLevelDataContext = {
     item?: any
     sectionTitle?: any
     attachments?: AttachmentMetadata[]
+    filter?: any
 }
 
 export type AttachmentSetting = {

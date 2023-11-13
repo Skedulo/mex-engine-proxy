@@ -14,7 +14,7 @@ export type SkedButtonProps = {
     theme?: SkedButtonTheme,
     disabled?: boolean | undefined
     size?: SkedButtonSize
-    style: StyleProp<ViewStyle>
+    style?: StyleProp<ViewStyle>
 }
 
 export type OnSignatureSavedResult = {
