@@ -1,7 +1,8 @@
 import {PromiseFn} from "react-async";
 import {SkedButtonTheme} from "@skedulo/mex-types";
-import {ColorValue, StyleProp, ViewProps, ViewStyle} from "react-native";
+import {ColorValue, StyleProp, TextInputProps, ViewProps, ViewStyle} from "react-native";
 import {ImageStyle, ResizeMode} from "react-native-fast-image";
+import {TimeZoneType} from "../../utils";
 
 export enum SkedButtonSize {
     SMALL = 'small',
@@ -89,4 +90,30 @@ export interface SkedImageProps extends ViewProps{
     uri: string
     resizeMode?: ResizeMode,
     imageStyles?: StyleProp<ImageStyle>
+}
+
+export type TextEditorViewProps = {
+    textInputProps?: TextInputProps
+    hasError?: boolean
+    value: any
+    multiline: boolean
+    readonly?: boolean
+}
+
+export type RadioButtonProps = {
+    readonly?: Boolean
+    isChecked: Boolean
+    handleOnPress: () => void
+    disableText?: Boolean
+    textComponent?: React.ReactNode
+}
+
+export type DatetimeEditorViewProps = {
+    value: string
+    placeholder?: string
+    readonly?: boolean
+    hasError?: boolean
+    timezone?: TimeZoneType
+    mode: "date" | "time" | "datetime"
+    onValueChanged(newValue: string):void
 }

@@ -1,6 +1,6 @@
 {
   "name": "@skedulo/mex-engine-proxy",
-  "version": "1.0.0-pre52",
+  "version": "1.0.0-pre53",
   "description": "Mex Engine proxy",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

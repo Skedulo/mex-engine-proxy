@@ -1,12 +1,12 @@
 import {Token, token} from "brandi";
 import React from "react";
 import {
-    CaptureSignatureViewProps,
+    CaptureSignatureViewProps, DatetimeEditorViewProps,
     DividerProps,
-    MexAsyncProps,
+    MexAsyncProps, RadioButtonProps,
     SearchBarProps,
     SkedButtonProps,
-    SkedIconProps, SkedImageProps
+    SkedIconProps, SkedImageProps, TextEditorViewProps
 } from "./models";
 
 export const ComponentsProxy = {
@@ -18,6 +18,9 @@ export const ComponentsProxy = {
     SearchBar: token<React.FC<SearchBarProps>>('SearchBar') as Token<React.FC<SearchBarProps>>,
     SkedIcon: token<React.FC<SkedIconProps>>('SkedIcon') as Token<React.FC<SkedIconProps>>,
     SkeduloImage: token<React.FC<SkedImageProps>>('SkeduloImage') as Token<React.FC<SkedImageProps>>,
+    DatetimeEditorView: token<React.FC<DatetimeEditorViewProps>>('DatetimeEditorView') as Token<React.FC<DatetimeEditorViewProps>>,
+    TextEditorView: token<React.FC<TextEditorViewProps>>('TextEditorView') as Token<React.FC<TextEditorViewProps>>,
+    RadioButton: token<React.FC<RadioButtonProps>>('RadioButton') as Token<React.FC<RadioButtonProps>>
 };
 
 export * from './models'
