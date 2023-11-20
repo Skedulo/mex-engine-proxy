@@ -1,5 +1,11 @@
 import {DataExpressionType, RoutingType} from "@skedulo/mex-types";
-import {AttachmentMetadata, AttachmentSetting, NavigationContext} from "../models";
+import {
+    AttachmentMetadata,
+    AttachmentSetting,
+    Metadatacontext,
+    NavigationContext,
+    PageLevelDataContext
+} from "../models";
 
 export interface IAssetsManager {
     cachedPackageId: string | null
@@ -16,6 +22,8 @@ export interface IAssetsManager {
     getCustomFunction(): string | null
     getAccessToken(): Promise<string>
     getAPIUrl(): Promise<string>
+    getPageLevelData(route: any): PageLevelDataContext
+    getMetadata(): Metadatacontext
     sync(forceSync: boolean): Promise<boolean>
 }
 
