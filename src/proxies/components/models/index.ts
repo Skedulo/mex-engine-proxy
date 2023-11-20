@@ -96,7 +96,6 @@ export type TextEditorViewProps = {
     textInputProps?: TextInputProps
     hasError?: boolean
     value: any
-    multiline: boolean
     readonly?: boolean
 }
 
