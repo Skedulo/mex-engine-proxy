@@ -1,6 +1,7 @@
 import {Token, token} from "brandi";
 import React from "react";
 import {
+    AttachmentsEditorViewProps,
     CaptureSignatureViewProps, DatetimeEditorViewProps,
     DividerProps,
     MexAsyncProps, RadioButtonProps,
@@ -20,6 +21,7 @@ export const ComponentsProxy = {
     SkeduloImage: token<React.FC<SkedImageProps>>('SkeduloImage') as Token<React.FC<SkedImageProps>>,
     DatetimeEditorView: token<React.FC<DatetimeEditorViewProps>>('DatetimeEditorView') as Token<React.FC<DatetimeEditorViewProps>>,
     TextEditorView: token<React.FC<TextEditorViewProps>>('TextEditorView') as Token<React.FC<TextEditorViewProps>>,
+    AttachmentsEditorView: token<React.FC<AttachmentsEditorViewProps>>('AttachmentsEditorView') as Token<React.FC<AttachmentsEditorViewProps>>,
     RadioButton: token<React.FC<RadioButtonProps>>('RadioButton') as Token<React.FC<RadioButtonProps>>
 };
 
