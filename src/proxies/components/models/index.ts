@@ -3,6 +3,7 @@ import {SkedButtonTheme} from "@skedulo/mex-types";
 import {ColorValue, StyleProp, TextInputProps, ViewProps, ViewStyle} from "react-native";
 import {ImageStyle, ResizeMode} from "react-native-fast-image";
 import {TimeZoneType} from "../../utils";
+import {AttachmentMetadata} from "../../services";
 
 export enum SkedButtonSize {
     SMALL = 'small',
@@ -115,4 +116,12 @@ export type DatetimeEditorViewProps = {
     timezone?: TimeZoneType
     mode: "date" | "time" | "datetime"
     onValueChanged(newValue: string):void
+}
+
+export type AttachmentsEditorViewProps = {
+    title?: string
+    parentId: string,
+    readonly?: boolean,
+    attachmentCategoryName?: string,
+    onAttachmentsChanged: (attachments: AttachmentMetadata[]) => void
 }
