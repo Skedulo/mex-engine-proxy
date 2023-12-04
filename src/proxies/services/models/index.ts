@@ -27,7 +27,10 @@ export type Metadatacontext = {
     userMetadata?: UserMetadata
     formMetadata?: FormMetadata,
     timezones?: TimezoneMetadata,
+    orgPreferences?: OrgPreferences,
 }
+
+export type OrgPreferences = Record<string, any>
 
 export type FormMetadata = {
     summary: string|undefined
