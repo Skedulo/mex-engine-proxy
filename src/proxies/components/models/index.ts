@@ -83,20 +83,20 @@ export const IconTypes: {
     },
     Camera: {
         ios: 'attachmentcamera',
-        android: 'ic_camera'
+        android: 'ic_camera',
     }
 }
 
 export interface SkedIconProps {
-    iconType: SkedIconDef,
+    iconType: SkedIconDef
     style: any
+    androidTintColor?: ColorValue
 }
 
 export interface SkedImageProps extends ViewProps{
     uri: string
     resizeMode?: ResizeMode,
     imageStyles?: StyleProp<ImageStyle>
-    tintColor?: ColorValue
 }
 
 export type TextEditorViewProps = {
