@@ -59,6 +59,7 @@ export const IconTypes: {
     Cross: SkedIconDef,
     DownArrow: SkedIconDef,
     DatePicker: SkedIconDef,
+    Camera: SkedIconDef,
 } = {
     ChevronRight: {
         ios: "ChevronRight",
@@ -79,6 +80,10 @@ export const IconTypes: {
     DatePicker: {
         ios: 'datepicker',
         android: 'ic_date_gray',
+    },
+    Camera: {
+        ios: 'attachmentcamera',
+        android: 'ic_camera'
     }
 }
 
@@ -91,6 +96,7 @@ export interface SkedImageProps extends ViewProps{
     uri: string
     resizeMode?: ResizeMode,
     imageStyles?: StyleProp<ImageStyle>
+    tintColor?: ColorValue
 }
 
 export type TextEditorViewProps = {
