@@ -1,9 +1,14 @@
 import {ScreenRegistryInfo} from "../types";
+import {FlatPageComponentProcessor, ListPageItemComponentProcessor} from "../../proxies";
+import {BaseFlatPageViewComponentModel, BaseListPageViewComponentModel} from "@skedulo/mex-types";
 
 export interface CustomComponentRegistry {
     registerScreen: (screen: ScreenRegistryInfo) => CustomComponentRegistry
-    registerFlatPageComponentProcessor: (flatPageProcessor: any) => CustomComponentRegistry /* Not doing it right now */
-    registerListPageItemComponentProcessor: (flatPageProcessor: any) => CustomComponentRegistry /* Not doing it right now */
+    registerFlatPageComponentProcessor: (flatPageProcessor: FlatPageComponentProcessor<BaseFlatPageViewComponentModel>) => CustomComponentRegistry
+    getRegisteredFlatPageComponentProcessors: () => FlatPageComponentProcessor<BaseFlatPageViewComponentModel>[]
+    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: ListPageItemComponentProcessor<BaseListPageViewComponentModel>) => CustomComponentRegistry
+    getRegisteredListPageItemComponentProcessors: () => ListPageItemComponentProcessor<BaseListPageViewComponentModel>[]
+
     getRegisteredScreens():ScreenRegistryInfo[]
     resolveScreenKey(screen: ScreenRegistryInfo): string
 }
