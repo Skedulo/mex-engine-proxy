@@ -1,14 +1,17 @@
 import {ScreenRegistryInfo} from "../types";
-import {FlatPageComponentProcessor, ListPageItemComponentProcessor} from "../../proxies";
-import {BaseFlatPageViewComponentModel, BaseListPageViewComponentModel} from "@skedulo/mex-types";
+import {
+    AbstractFlatPageViewProcessor,
+    AbstractProcessor
+} from "../../proxies";
 
 export interface CustomComponentRegistry {
     registerScreen: (screen: ScreenRegistryInfo) => CustomComponentRegistry
-    registerFlatPageComponentProcessor: (flatPageProcessor: FlatPageComponentProcessor<BaseFlatPageViewComponentModel>) => CustomComponentRegistry
-    getRegisteredFlatPageComponentProcessors: () => FlatPageComponentProcessor<BaseFlatPageViewComponentModel>[]
-    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: ListPageItemComponentProcessor<BaseListPageViewComponentModel>) => CustomComponentRegistry
-    getRegisteredListPageItemComponentProcessors: () => ListPageItemComponentProcessor<BaseListPageViewComponentModel>[]
+    registerFlatPageComponentProcessor: (flatPageProcessor: (typeof AbstractFlatPageViewProcessor)) => CustomComponentRegistry
+    getRegisteredFlatPageComponentProcessors: () => (typeof AbstractFlatPageViewProcessor)[]
+    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: (typeof AbstractProcessor)) => CustomComponentRegistry
+    getRegisteredListPageItemComponentProcessors: () => (typeof AbstractProcessor)[]
 
-    getRegisteredScreens():ScreenRegistryInfo[]
+    getRegisteredScreens(): ScreenRegistryInfo[]
+
     resolveScreenKey(screen: ScreenRegistryInfo): string
 }

@@ -1,34 +1,35 @@
 import {CustomComponentRegistry} from "../interfaces";
 import {ScreenRegistryInfo} from "../types";
-import {FlatPageComponentProcessor, ListPageItemComponentProcessor} from "../../proxies";
-import {BaseFlatPageViewComponentModel, BaseListPageViewComponentModel} from "@skedulo/mex-types";
+import {
+    AbstractFlatPageViewProcessor,
+    AbstractProcessor
+} from "../../proxies";
 
 export class CustomComponentRegistryImpl implements CustomComponentRegistry {
 
     registeredScreens: ScreenRegistryInfo[] = []
-    registeredFlatPageComponentProcessors: FlatPageComponentProcessor<BaseFlatPageViewComponentModel>[] = []
-    listPageItemComponentProcessors: ListPageItemComponentProcessor<BaseListPageViewComponentModel>[] = []
+    registeredFlatPageComponentProcessors: (typeof AbstractFlatPageViewProcessor)[] = []
+    listPageItemComponentProcessors: (typeof AbstractProcessor)[] = []
     moduleName: string
 
     constructor(moduleName: string) {
         this.moduleName = moduleName
     }
 
-    registerFlatPageComponentProcessor(flatPageComponentProcessor: FlatPageComponentProcessor<BaseFlatPageViewComponentModel>): CustomComponentRegistry {
+    registerFlatPageComponentProcessor(flatPageComponentProcessor: (typeof AbstractFlatPageViewProcessor)): CustomComponentRegistry {
         this.registeredFlatPageComponentProcessors.push(flatPageComponentProcessor)
         return this
     }
-
-    getRegisteredFlatPageComponentProcessors(): FlatPageComponentProcessor<BaseFlatPageViewComponentModel>[] {
+    getRegisteredFlatPageComponentProcessors(): (typeof AbstractFlatPageViewProcessor)[] {
         return this.registeredFlatPageComponentProcessors
     }
 
-    registerListPageItemComponentProcessor(listPageItemComponentProcessor: ListPageItemComponentProcessor<BaseListPageViewComponentModel>): CustomComponentRegistry {
+    registerListPageItemComponentProcessor(listPageItemComponentProcessor: (typeof AbstractProcessor)): CustomComponentRegistry {
         this.listPageItemComponentProcessors.push(listPageItemComponentProcessor)
         return this
     }
 
-    getRegisteredListPageItemComponentProcessors(): ListPageItemComponentProcessor<BaseListPageViewComponentModel>[] {
+    getRegisteredListPageItemComponentProcessors(): (typeof AbstractProcessor)[] {
         return this.listPageItemComponentProcessors
     }
 
