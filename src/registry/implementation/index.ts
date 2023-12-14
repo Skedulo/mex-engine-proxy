@@ -8,28 +8,28 @@ import {
 export class CustomComponentRegistryImpl implements CustomComponentRegistry {
 
     registeredScreens: ScreenRegistryInfo[] = []
-    registeredFlatPageComponentProcessors: (typeof AbstractFlatPageViewProcessor)[] = []
-    listPageItemComponentProcessors: (typeof AbstractProcessor)[] = []
+    registeredFlatPageComponentProcessors: AbstractFlatPageViewProcessor<any, any, any>[] = []
+    listPageItemComponentProcessors: AbstractProcessor<any, any, any>[] = []
     moduleName: string
 
     constructor(moduleName: string) {
         this.moduleName = moduleName
     }
 
-    registerFlatPageComponentProcessor(flatPageComponentProcessor: (typeof AbstractFlatPageViewProcessor)): CustomComponentRegistry {
+    registerFlatPageComponentProcessor(flatPageComponentProcessor: AbstractFlatPageViewProcessor<any, any, any>): CustomComponentRegistry {
         this.registeredFlatPageComponentProcessors.push(flatPageComponentProcessor)
         return this
     }
-    getRegisteredFlatPageComponentProcessors(): (typeof AbstractFlatPageViewProcessor)[] {
+    getRegisteredFlatPageComponentProcessors(): AbstractFlatPageViewProcessor<any, any, any>[] {
         return this.registeredFlatPageComponentProcessors
     }
 
-    registerListPageItemComponentProcessor(listPageItemComponentProcessor: (typeof AbstractProcessor)): CustomComponentRegistry {
+    registerListPageItemComponentProcessor(listPageItemComponentProcessor: AbstractProcessor<any, any, any>): CustomComponentRegistry {
         this.listPageItemComponentProcessors.push(listPageItemComponentProcessor)
         return this
     }
 
-    getRegisteredListPageItemComponentProcessors(): (typeof AbstractProcessor)[] {
+    getRegisteredListPageItemComponentProcessors(): AbstractProcessor<any, any, any>[] {
         return this.listPageItemComponentProcessors
     }
 

@@ -6,10 +6,10 @@ import {
 
 export interface CustomComponentRegistry {
     registerScreen: (screen: ScreenRegistryInfo) => CustomComponentRegistry
-    registerFlatPageComponentProcessor: (flatPageProcessor: (typeof AbstractFlatPageViewProcessor)) => CustomComponentRegistry
-    getRegisteredFlatPageComponentProcessors: () => (typeof AbstractFlatPageViewProcessor)[]
-    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: (typeof AbstractProcessor)) => CustomComponentRegistry
-    getRegisteredListPageItemComponentProcessors: () => (typeof AbstractProcessor)[]
+    registerFlatPageComponentProcessor: (flatPageProcessor: AbstractFlatPageViewProcessor<any, any, any>) => CustomComponentRegistry
+    getRegisteredFlatPageComponentProcessors: () => AbstractFlatPageViewProcessor<any, any, any>[]
+    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: AbstractProcessor<any, any, any>) => CustomComponentRegistry
+    getRegisteredListPageItemComponentProcessors: () => AbstractProcessor<any, any, any>[]
 
     getRegisteredScreens(): ScreenRegistryInfo[]
 
