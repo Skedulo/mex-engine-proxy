@@ -31,3 +31,13 @@ export type ListPageViewArgs<TComponentDefinitionModel extends BaseListPageViewC
     & {
     listPageJsonDef: ListPageComponentModel
 }
+
+export interface ProcessorInterface {
+    getTypeName(): string
+}
+
+export interface ListPageProcessorInterface extends ProcessorInterface {
+}
+
+export interface FlatPageProcessorInterface extends ProcessorInterface{
+}

@@ -1,15 +1,14 @@
 import {ScreenRegistryInfo} from "../types";
 import {
-    AbstractFlatPageViewProcessor,
-    AbstractProcessor
+    FlatPageProcessorInterface, ListPageProcessorInterface
 } from "../../proxies";
 
 export interface CustomComponentRegistry {
     registerScreen: (screen: ScreenRegistryInfo) => CustomComponentRegistry
-    registerFlatPageComponentProcessor: (flatPageProcessor: AbstractFlatPageViewProcessor<any, any, any>) => CustomComponentRegistry
-    getRegisteredFlatPageComponentProcessors: () => AbstractFlatPageViewProcessor<any, any, any>[]
-    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: AbstractProcessor<any, any, any>) => CustomComponentRegistry
-    getRegisteredListPageItemComponentProcessors: () => AbstractProcessor<any, any, any>[]
+    registerFlatPageComponentProcessor: (flatPageProcessor: FlatPageProcessorInterface) => CustomComponentRegistry
+    getRegisteredFlatPageComponentProcessors: () => FlatPageProcessorInterface[]
+    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: ListPageProcessorInterface) => CustomComponentRegistry
+    getRegisteredListPageItemComponentProcessors: () => ListPageProcessorInterface[]
 
     getRegisteredScreens(): ScreenRegistryInfo[]
 

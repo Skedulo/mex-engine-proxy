@@ -1,12 +1,12 @@
 import {observer} from "mobx-react-lite";
 import {FC} from "react";
 import {BaseComponentModel} from "@skedulo/mex-types";
-import {StandardComponentArgs, StandardComponentProps} from "./models";
+import {ProcessorInterface, StandardComponentArgs, StandardComponentProps} from "./models";
 
 export abstract class AbstractProcessor<
     TComponentProps extends StandardComponentProps<TComponentArgs,TComponentDefinitionModel>,
     TComponentArgs extends StandardComponentArgs<TComponentDefinitionModel>,
-    TComponentDefinitionModel extends BaseComponentModel> {
+    TComponentDefinitionModel extends BaseComponentModel> implements ProcessorInterface{
     VirtualComponent: FC<TComponentProps> | null = null;
 
     /**
