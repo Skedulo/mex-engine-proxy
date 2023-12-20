@@ -10,7 +10,7 @@ export abstract class AbstractCustomFlatPageViewProcessor<
 
     moduleName: string
 
-    protected constructor(moduleName: string) {
+    constructor(moduleName: string) {
         super();
         this.moduleName = moduleName
     }
