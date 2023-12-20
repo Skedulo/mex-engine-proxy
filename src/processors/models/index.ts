@@ -4,7 +4,7 @@ import {
     BaseListPageViewComponentModel,
     ListPageComponentModel
 } from "@skedulo/mex-types";
-import {NavigationContext, PageLevelDataContext} from "../../services";
+import {NavigationContext, PageLevelDataContext} from "../../proxies/services";
 export type StandardComponentArgs<TComponentDefinitionModel extends BaseComponentModel> = {
     dataContext: PageLevelDataContext
     jsonDef: TComponentDefinitionModel
@@ -37,7 +37,9 @@ export interface ProcessorInterface {
 }
 
 export interface ListPageProcessorInterface extends ProcessorInterface {
+    getCustomProcessorTypeName(): string
 }
 
-export interface FlatPageProcessorInterface extends ProcessorInterface{
+export interface FlatPageProcessorInterface extends ProcessorInterface {
+    getCustomProcessorTypeName(): string
 }

@@ -1,32 +1,31 @@
 import {CustomComponentRegistry} from "../interfaces";
-import {ScreenRegistryInfo} from "../types";
-import { FlatPageProcessorInterface, ListPageProcessorInterface } from "../../proxies";
+import {FlatPageProcessorRegistryInfo, ListPageProcessorRegistryInfo, ScreenRegistryInfo} from "../types";
 
 export class CustomComponentRegistryImpl implements CustomComponentRegistry {
 
     registeredScreens: ScreenRegistryInfo[] = []
-    registeredFlatPageComponentProcessors: FlatPageProcessorInterface[] = []
-    listPageItemComponentProcessors: ListPageProcessorInterface[] = []
+    registeredFlatPageComponentProcessors: FlatPageProcessorRegistryInfo[] = []
+    listPageItemComponentProcessors: ListPageProcessorRegistryInfo[] = []
     moduleName: string
 
     constructor(moduleName: string) {
         this.moduleName = moduleName
     }
 
-    registerFlatPageComponentProcessor(flatPageComponentProcessor: FlatPageProcessorInterface): CustomComponentRegistry {
+    registerFlatPageComponentProcessor(flatPageComponentProcessor: FlatPageProcessorRegistryInfo): CustomComponentRegistry {
         this.registeredFlatPageComponentProcessors.push(flatPageComponentProcessor)
         return this
     }
-    getRegisteredFlatPageComponentProcessors(): FlatPageProcessorInterface[] {
+    getRegisteredFlatPageComponentProcessors(): FlatPageProcessorRegistryInfo[] {
         return this.registeredFlatPageComponentProcessors
     }
 
-    registerListPageItemComponentProcessor(listPageItemComponentProcessor: ListPageProcessorInterface): CustomComponentRegistry {
+    registerListPageItemComponentProcessor(listPageItemComponentProcessor: ListPageProcessorRegistryInfo): CustomComponentRegistry {
         this.listPageItemComponentProcessors.push(listPageItemComponentProcessor)
         return this
     }
 
-    getRegisteredListPageItemComponentProcessors(): ListPageProcessorInterface[] {
+    getRegisteredListPageItemComponentProcessors(): ListPageProcessorRegistryInfo[] {
         return this.listPageItemComponentProcessors
     }
 

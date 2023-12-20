@@ -1,14 +1,14 @@
 import {BaseFlatPageViewComponentModel} from "@skedulo/mex-types";
-import {FlatPageProcessorInterface, FlatPageViewArgs, FlatPageViewProps} from "./models";
+import {FlatPageViewArgs, FlatPageViewProps} from "./models";
 import {AbstractProcessor} from "./AbstractProcessor";
-import {ExpressionProxy} from "../expressions";
-import {CoreContainer} from "../Container";
+import {ExpressionProxy} from "../proxies";
+import {CoreContainer} from "../proxies";
 
 export abstract class AbstractFlatPageViewProcessor<
     TComponentProps extends FlatPageViewProps<TComponentArgs, TComponentDefinitionModel>,
     TComponentArgs extends FlatPageViewArgs<TComponentDefinitionModel>,
     TComponentDefinitionModel extends BaseFlatPageViewComponentModel>
-    extends AbstractProcessor<TComponentProps, TComponentArgs, TComponentDefinitionModel> implements FlatPageProcessorInterface{
+    extends AbstractProcessor<TComponentProps, TComponentArgs, TComponentDefinitionModel>{
 
     isFullWidthLayout() {
         return false
