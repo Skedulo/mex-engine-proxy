@@ -1,9 +1,13 @@
-import {ScreenRegistryInfo} from "../types";
+import {FlatPageProcessorRegistryInfo, ListPageProcessorRegistryInfo, ScreenRegistryInfo} from "../types";
 
 export interface CustomComponentRegistry {
     registerScreen: (screen: ScreenRegistryInfo) => CustomComponentRegistry
-    registerFlatPageComponentProcessor: (flatPageProcessor: any) => CustomComponentRegistry /* Not doing it right now */
-    registerListPageItemComponentProcessor: (flatPageProcessor: any) => CustomComponentRegistry /* Not doing it right now */
-    getRegisteredScreens():ScreenRegistryInfo[]
+    registerFlatPageComponentProcessor: (flatPageProcessor: FlatPageProcessorRegistryInfo) => CustomComponentRegistry
+    getRegisteredFlatPageComponentProcessors: () => FlatPageProcessorRegistryInfo[]
+    registerListPageItemComponentProcessor: (listPageItemComponentProcessor: ListPageProcessorRegistryInfo) => CustomComponentRegistry
+    getRegisteredListPageItemComponentProcessors: () => ListPageProcessorRegistryInfo[]
+
+    getRegisteredScreens(): ScreenRegistryInfo[]
+
     resolveScreenKey(screen: ScreenRegistryInfo): string
 }
