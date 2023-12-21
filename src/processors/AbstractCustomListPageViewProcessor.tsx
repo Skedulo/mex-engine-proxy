@@ -13,7 +13,7 @@ export abstract class AbstractCustomListPageViewProcessor<TComponentDefinitionMo
 
     moduleName: string
 
-    protected constructor(moduleName: string) {
+    constructor(moduleName: string) {
         super();
         this.moduleName = moduleName
     }
