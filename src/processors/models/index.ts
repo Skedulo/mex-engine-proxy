@@ -4,7 +4,8 @@ import {
     BaseListPageViewComponentModel,
     ListPageComponentModel
 } from "@skedulo/mex-types";
-import {NavigationContext, PageLevelDataContext} from "../../proxies/services";
+import {NavigationContext, PageLevelDataContext} from "../../proxies";
+import {FC} from "react";
 export type StandardComponentArgs<TComponentDefinitionModel extends BaseComponentModel> = {
     dataContext: PageLevelDataContext
     jsonDef: TComponentDefinitionModel
@@ -33,13 +34,15 @@ export type ListPageViewArgs<TComponentDefinitionModel extends BaseListPageViewC
 }
 
 export interface ProcessorInterface {
-    getTypeName(): string
+    getTypeName(): string;
+    generateComponent(): FC;
 }
-
 export interface ListPageProcessorInterface extends ProcessorInterface {
-    getCustomProcessorTypeName(): string
+    getCustomProcessorTypeName(): string;
 }
-
 export interface FlatPageProcessorInterface extends ProcessorInterface {
-    getCustomProcessorTypeName(): string
+    getCustomProcessorTypeName(): string;
+    isFullWidthLayout(): boolean;
+    hasTopMargin(): boolean;
+    checkVisibility(args: any): boolean;
 }
