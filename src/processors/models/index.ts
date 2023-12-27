@@ -33,14 +33,14 @@ export type ListPageViewArgs<TComponentDefinitionModel extends BaseListPageViewC
     listPageJsonDef: ListPageComponentModel
 }
 
-export interface ProcessorInterface {
+export interface ProcessorInterface<TComponentProps = {}> {
     getTypeName(): string;
-    generateComponent(): FC;
+    generateComponent(): FC<TComponentProps>
 }
-export interface ListPageProcessorInterface extends ProcessorInterface {
+export interface ListPageProcessorInterface<TComponentProps = {}> extends ProcessorInterface<TComponentProps> {
     getCustomProcessorTypeName(): string;
 }
-export interface FlatPageProcessorInterface extends ProcessorInterface {
+export interface FlatPageProcessorInterface<TComponentProps = {}> extends ProcessorInterface<TComponentProps> {
     getCustomProcessorTypeName(): string;
     isFullWidthLayout(): boolean;
     hasTopMargin(): boolean;

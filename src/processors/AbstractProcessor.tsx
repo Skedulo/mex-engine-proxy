@@ -6,7 +6,7 @@ import {ProcessorInterface, StandardComponentArgs, StandardComponentProps} from 
 export abstract class AbstractProcessor<
     TComponentProps extends StandardComponentProps<TComponentArgs,TComponentDefinitionModel>,
     TComponentArgs extends StandardComponentArgs<TComponentDefinitionModel>,
-    TComponentDefinitionModel extends BaseComponentModel> implements ProcessorInterface{
+    TComponentDefinitionModel extends BaseComponentModel> implements ProcessorInterface<TComponentProps>{
     VirtualComponent: FC<TComponentProps> | null = null;
 
     /**

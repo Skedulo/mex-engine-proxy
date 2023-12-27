@@ -6,7 +6,7 @@ export abstract class AbstractCustomFlatPageViewProcessor<
     TComponentProps extends FlatPageViewProps<TComponentArgs, TComponentDefinitionModel>,
     TComponentArgs extends FlatPageViewArgs<TComponentDefinitionModel>,
     TComponentDefinitionModel extends BaseFlatPageViewComponentModel>
-    extends AbstractFlatPageViewProcessor<TComponentProps, TComponentArgs, TComponentDefinitionModel> implements FlatPageProcessorInterface{
+    extends AbstractFlatPageViewProcessor<TComponentProps, TComponentArgs, TComponentDefinitionModel> implements FlatPageProcessorInterface<TComponentProps>{
 
     moduleName: string
 
