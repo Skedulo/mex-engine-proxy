@@ -9,7 +9,7 @@ export abstract class AbstractCustomListPageViewProcessor<TComponentDefinitionMo
     extends AbstractProcessor<
         ListPageViewProps<TComponentDefinitionModel>,
         ListPageViewArgs<TComponentDefinitionModel>,
-        TComponentDefinitionModel> implements ListPageProcessorInterface{
+        TComponentDefinitionModel> implements ListPageProcessorInterface<ListPageViewProps<TComponentDefinitionModel>>{
 
     moduleName: string
 
