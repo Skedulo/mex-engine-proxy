@@ -19,6 +19,7 @@ export type AttachmentMetadata = {
     status: string,
     description?: string
     uploadDate: string
+    contentType: string
 }
 
 export type Metadatacontext = {
